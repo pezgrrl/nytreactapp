@@ -1,0 +1,50 @@
+{
+  "name": "nytreactapp",
+  "version": "0.1.0",
+  "private": true,
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bluebird": "^3.5.3",
+    "body-parser": "^1.18.3",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.4",
+    "moment": "^2.22.2",
+    "mongodb": "^3.1.10",
+    "mongoose": "^5.3.11",
+    "morgan": "^1.9.1",
+    "react": "^16.6.3",
+    "react-bootstrap": "^0.32.4",
+    "react-dom": "^16.6.3",
+    "react-moment": "^0.8.3",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^2.1.1",
+    "scheduler": "^0.11.1",
+    "yarn": "^1.12.3"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd client && yarn install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^4.0.1",
+    "nodemon": "^1.11.0"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
